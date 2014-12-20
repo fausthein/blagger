@@ -8,6 +8,10 @@
 <br/>
 <p><%= @article.body %></p>
 <br/>
+<% if @article.image.exists? %>
+<p><%= image_tag @article.image.url %></p>
+<br/>
+<% end %>
 <%= link_to "edit", edit_article_path(@article) %><br/>
 <%= link_to "lol", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %><br/>
 
